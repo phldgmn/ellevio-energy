@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+dev-config/
+*.db
+*.db-*
+.env
+credentials.*
+ellevio_energy.egg-info/

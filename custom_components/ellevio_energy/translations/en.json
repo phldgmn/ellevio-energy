@@ -1,0 +1,85 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect Ellevio",
+        "description": "Use your Mina sidor login and customer ID. Installations are discovered from your account in the next step.",
+        "data": {
+          "email": "Email",
+          "password": "Password",
+          "customer_id": "Customer ID"
+        }
+      },
+      "installations": {
+        "title": "Choose installations",
+        "description": "Select the installations (anläggningar) to import. Rename them later under Configure.",
+        "data": {
+          "anlage_ids": "Installations"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Reauthenticate Ellevio",
+        "description": "Your Ellevio login expired or was rejected. Enter your credentials again.",
+        "data": {
+          "email": "Email",
+          "password": "Password"
+        }
+      },
+      "reconfigure": {
+        "title": "Reconfigure Ellevio",
+        "description": "Update your Mina sidor login. The next step lists the installations on your account so you can add or remove them.",
+        "data": {
+          "email": "Email",
+          "password": "Password"
+        }
+      },
+      "reconfigure_installations": {
+        "title": "Installations",
+        "description": "Select the installations to import. Unselected installations are removed along with their devices.",
+        "data": {
+          "anlage_ids": "Installations"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Login rejected by Ellevio.",
+      "cannot_connect": "Could not reach Ellevio.",
+      "no_installations": "Select at least one installation.",
+      "no_installations_found": "No consumption installations found on this account."
+    },
+    "abort": {
+      "already_configured": "This customer is already configured.",
+      "reauth_successful": "Re-authentication successful.",
+      "reconfigure_successful": "Ellevio configuration updated."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Ellevio options",
+        "description": "Choose what to change.",
+        "menu_options": {
+          "settings": "Import settings",
+          "rename": "Rename an installation"
+        }
+      },
+      "settings": {
+        "title": "Import settings",
+        "data": {
+          "backfill_days": "Backfill days (first import)",
+          "refetch_days": "Re-fetch window (days)",
+          "poll_hours": "Poll interval (hours)",
+          "supplier_price_per_kwh": "Supplier energy price, SEK/kWh (0 = grid fees only)"
+        }
+      },
+      "rename": {
+        "title": "Rename an installation",
+        "description": "Pick an installation and enter a new name. Leave the name empty to reset it to the default. The new name applies to the statistics and device after the next import.",
+        "data": {
+          "installation": "Installation",
+          "name": "New name"
+        }
+      }
+    }
+  }
+}

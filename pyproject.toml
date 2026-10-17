@@ -1,0 +1,38 @@
+[project]
+name = "ellevio-energy"
+version = "0.1.0"
+description = "Home Assistant custom integration importing Ellevio consumption into the Energy dashboard"
+requires-python = ">=3.14"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "homeassistant==2026.10.1",
+    "pytest-homeassistant-custom-component==0.13.372",
+    "pytest-asyncio",
+    "ruff",
+    "mypy",
+]
+
+[tool.ruff]
+target-version = "py314"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "ASYNC", "RUF"]
+
+[tool.mypy]
+python_version = "3.14"
+strict = true
+warn_unreachable = true
+explicit_package_bases = true
+files = ["custom_components/ellevio_energy", "tests"]
+
+[[tool.mypy.overrides]]
+module = ["homeassistant.*", "pytest_homeassistant_custom_component.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]

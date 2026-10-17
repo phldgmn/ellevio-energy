@@ -1,0 +1,14 @@
+/// Ruff linting and formatting, with mypy behind the types profile.
+amends "package://github.com/jdx/hk/releases/download/v2.7.0/hk@2.7.0#/Config.pkl"
+
+import "package://github.com/jdx/hk/releases/download/v2.7.0/hk@2.7.0#/Builtins.pkl"
+
+steps {
+  ["ruff"] = Builtins.ruff
+  ["ruff-format"] = (Builtins.ruff_format) {
+    depends = "ruff"
+  }
+  ["mypy"] = (Builtins.mypy) {
+    profiles = List("types")
+  }
+}

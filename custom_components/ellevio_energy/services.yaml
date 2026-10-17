@@ -1,0 +1,18 @@
+reimport:
+  name: Reimport consumption
+  description: Re-fetch and overwrite Ellevio consumption statistics for a date range. Use to repair gaps or apply utility corrections.
+  fields:
+    start_date:
+      name: Start date
+      description: First local day to re-fetch (inclusive).
+      required: true
+      example: "2026-10-01"
+      selector:
+        date:
+    end_date:
+      name: End date
+      description: Last local day to re-fetch (inclusive). Defaults to today.
+      required: false
+      example: "2026-10-16"
+      selector:
+        date:
